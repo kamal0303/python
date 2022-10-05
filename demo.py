@@ -1,1 +1,2 @@
-print("demo for example")
+language = "python"
+print(f"welcome to {language} class")
