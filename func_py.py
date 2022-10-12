@@ -6,3 +6,6 @@ def disccalc(cp, discount):
 
 sp = disccalc(660, 30)
 print(sp)
+
+print = "Hi there"
+type(print)
