@@ -7,15 +7,27 @@
 # sp = disccalc(660, 30)
 # print(sp)
 
-pi = 22/7
-rounded_pi = round(pi, 2)
-print(rounded_pi)
+# pi = 22/7
+# rounded_pi = round(pi, 2)
+# print(rounded_pi)
 
-z_four = 5 < 3
-print(z_four)
+def add_fourorfive(input):
+    if input < 10:
+        output = input + 4
+    elif input >= 10:
+        output = input + 5
+    return output
 
-z_five = not z_four
-print(z_five)
 
-shortest_string = ""
-print(len(shortest_string))
+output = add_fourorfive(10)
+print(output)
+
+
+def evaluate_temp(temp):
+    message = "Normal temperature"
+    if temp > 38:
+        message = "Fever"
+    return message
+
+
+print(evaluate_temp(39))
