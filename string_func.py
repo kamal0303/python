@@ -36,5 +36,5 @@
 # # multi assignments of variable
 
 firstName, middleName, surName = "kamal", "kishore", "sharma"
-print(f"{firstName}.{surName}@gmail.com")
+print(firstName)
 # print(middleName)
