@@ -7,5 +7,5 @@ def index(request):
     return HttpResponse("This is Homepage")
 
 
-def index(request):
+def about(request):
     return HttpResponse("This is aboutpage")
