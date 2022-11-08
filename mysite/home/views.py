@@ -4,7 +4,12 @@ from django.shortcuts import render, HttpResponse
 
 
 def index(request):
-    return HttpResponse("This is Homepage")
+    context = {
+        "variable1": "this is sent",
+        "variable2": "welcome to the jungle"
+    }
+    return render(request, 'index.html', context)
+    # return HttpResponse("This is Homepage")
 
 
 def about(request):
