@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse
 from datetime import datetime
 from home.models import Contact
 from django.contrib import messages
+from django.contrib.auth.models import User
 # Create your views here.
 
 
@@ -25,18 +26,6 @@ def services(request):
     # return HttpResponse("This is services page")
 
 
-def login(request):
-    return render(request, 'login.html')
-
-
-def blog(request):
-    return render(request, 'blog.html')
-
-
-def logout(request):
-    return render(request, 'blog.html')
-
-
 def contact(request):
     if request.method == "POST":
         name = request.POST.get('name')
@@ -51,3 +40,28 @@ def contact(request):
 
     return render(request, 'contact.html')
     # return HttpResponse("This is contact page")
+
+
+def login(request):
+    if request.method == "POST":
+        # check if user has entered correct credentials
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            # A backend authenticated the credentials
+            return redirect("/")
+        else:
+            return render(request, 'login.html')
+            # No backend authenticated the credentials
+        # check if user has entered correct credentials
+
+    return render(request, 'login.html')
+
+
+def blog(request):
+    return render(request, 'blog.html')
+
+
+def logout(request):
+    return render(request, 'blog.html')
