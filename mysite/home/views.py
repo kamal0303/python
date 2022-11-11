@@ -10,7 +10,7 @@ def index(request):
         "variable1": "this is sent",
         "variable2": "welcome to the jungle"
     }
-    messages.success(request, "this is a test message")
+    # messages.success(request, "this is a test message")
     return render(request, 'index.html', context)
     # return HttpResponse("This is Homepage")
 
@@ -23,6 +23,18 @@ def about(request):
 def services(request):
     return render(request, 'services.html')
     # return HttpResponse("This is services page")
+
+
+def login(request):
+    return render(request, 'login.html')
+
+
+def blog(request):
+    return render(request, 'blog.html')
+
+
+def logout(request):
+    return render(request, 'blog.html')
 
 
 def contact(request):
