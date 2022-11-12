@@ -44,7 +44,7 @@ def contact(request):
     # return HttpResponse("This is contact page")
 
 
-def login(request):
+def loginuser(request):
     if request.method == "POST":
         # check if user has entered correct credentials
         username = request.POST.get('username')
@@ -52,7 +52,7 @@ def login(request):
         print(username, password)
         user = authenticate(username=username, password=password)
         if user is not None:
-            login(user)
+            login(request, user)
             # A backend authenticated the credentials
             return redirect("/blog")
         else:
