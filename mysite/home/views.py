@@ -3,7 +3,7 @@ from datetime import datetime
 from home.models import Contact
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import redirect
 # Create your views here.
 
@@ -44,32 +44,34 @@ def contact(request):
     # return HttpResponse("This is contact page")
 
 
-def loginuser(request):
-    if request.method == "POST":
-        # check if user has entered correct credentials
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        print(username, password)
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            login(request, user)
-            # A backend authenticated the credentials
-            return redirect("/blog")
-        else:
-            return render(request, 'login.html')
-            # No backend authenticated the credentials
-        # check if user has entered correct credentials
-
-    return render(request, 'login.html')
-
-
 def blog(request):
     print(request.user)
     if request.user.is_anonymous:
         return redirect("/login")
-    return render(request, 'blog.html')
+    else:
+        return render(request, 'blog.html')
 
 
-def logoutuser(request):
+def loginUser(request):
+    if request.method == "POST":
+        # check if user has entered correct credentials
+        username = request.POST.GET('username')
+        password = request.POST.GET('password')
+        print(username, password)
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # print("logged in")
+        # A backend authenticated the credentials
+            return redirect('/blog')
+    else:
+        return render(request, 'login.html')
+        # No backend authenticated the credentials
+        # check if user has entered correct credentials
+
+    # return render(request, 'blog.html')
+
+
+def logoutUser(request):
     logout(request)
     return redirect('/login')

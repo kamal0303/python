@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Logged in user</title>
+    {% block title %}Loggedin user{% endblock title %}
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  {% block body %}
     {% comment %} welcome {{request user}} {% endcomment %}
     <p>welcome to blogs</p>
     <a href="/logout">Logout</a>
 	{% comment %} <script src="index.js"></script> {% endcomment %}
-  </body>
+  {% endblock body %}
 </html>
