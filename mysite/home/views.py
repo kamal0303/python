@@ -3,6 +3,8 @@ from datetime import datetime
 from home.models import Contact
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib.auth import logout, authenticate, login
+from django.shortcuts import redirect
 # Create your views here.
 
 
@@ -47,10 +49,12 @@ def login(request):
         # check if user has entered correct credentials
         username = request.POST.get('username')
         password = request.POST.get('password')
+        print(username, password)
         user = authenticate(username=username, password=password)
         if user is not None:
+            login(user)
             # A backend authenticated the credentials
-            return redirect("/")
+            return redirect("/blog")
         else:
             return render(request, 'login.html')
             # No backend authenticated the credentials
@@ -60,8 +64,12 @@ def login(request):
 
 
 def blog(request):
+    print(request.user)
+    if request.user.is_anonymous:
+        return redirect("/login")
     return render(request, 'blog.html')
 
 
-def logout(request):
-    return render(request, 'blog.html')
+def logoutuser(request):
+    logout(request)
+    return redirect('/login')
