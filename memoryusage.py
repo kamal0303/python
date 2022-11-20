@@ -1,7 +1,7 @@
 import sys
-l = [1, 2, 3, 4, 5]
-t = (1, 2, 3, 4, 5)
-s = "a, b, c, d , e"
+l = [12, 23, 34, 45, 56]
+t = (13, 26, 39, 48, 57)
+s = ["a, b, c, d, e"]
 
 print(sys.getsizeof(l))
 print(sys.getsizeof(t))
