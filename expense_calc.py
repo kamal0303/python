@@ -9,9 +9,8 @@ while exp != 0:
     total = total + exp
     if exp > maxexp:
         maxexp = exp
-    # elif minexp <
-    # minexp = min(exp)
 
-    print("your total expenditure is " + str(total))
-    print("the maximum you spend is " + str(maxexp))
-    # print("the minimum you spend is " + str(minexp))
+
+print("your total expenditure is " + str(total))
+print("the maximum you spend is " + str(maxexp))
+print("the minimum you spend is " + str(minexp))
