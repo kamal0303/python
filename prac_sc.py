@@ -40,6 +40,29 @@
 #         print(i)
 #     i += 1
 
-li = ['A']
-li.extend('BCD')
-print(li)
+# li = ['A']
+# li.extend('BCD')
+# print(li)
+
+# n = int(input("enter any number: "))
+# i = 1
+# while (i <= n):
+#     if n % i == 0:
+#         print(i)
+#         i = i + 1
+
+A = int(input("Enter a number:"))
+if A >= 2100:
+    category = "grand master"
+elif A >= 1900:
+    category = "candidate master"
+elif A >= 1600:
+    category = "expert"
+elif A >= 1400:
+    category = "pupil"
+else:
+    category = "newbie"
+if A % 2 == 0:
+    print(category.upper())
+else:
+    print(category)
