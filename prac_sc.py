@@ -5,7 +5,7 @@
 # counter variable
 # while (test expression)
 # statement
-#increment / decrement
+# increment / decrement
 
 # counter = 1
 # while counter <= 4:
@@ -51,18 +51,19 @@
 #         print(i)
 #         i = i + 1
 
-A = int(input("Enter a number:"))
-if A >= 2100:
-    category = "grand master"
-elif A >= 1900:
-    category = "candidate master"
-elif A >= 1600:
-    category = "expert"
-elif A >= 1400:
-    category = "pupil"
-else:
-    category = "newbie"
-if A % 2 == 0:
-    print(category.upper())
-else:
-    print(category)
+
+# s = "Radar"
+# print(s.strip('rarely'))
+
+# a = 5
+# for i in range(10):
+#     print(f"{a}X{i+1}= {a * (i+1)}")
+
+def Greet(item):
+    print("Good morning")
+
+
+l1 = ["harry", "soham", "kamal", "shrey"]
+for item in l1:
+    if item.startswith("s"):
+        print(f"Greet{item}")
