@@ -56,14 +56,24 @@
 # print(s.strip('rarely'))
 
 # a = 5
-# for i in range(10):
+# i = 0
+# while i in range(10):
 #     print(f"{a}X{i+1}= {a * (i+1)}")
+#     i = i + 1
 
-def Greet(item):
-    print("Good morning")
+x = int(input("Enter a number: "))
+y = int(input("Enter a number: "))
+flag = True
+for i in range(2, x+1):
+    if x % 2 == 0:
+        if y % 2 == 0:
+            flag = False
+print(flag)
 
 
-l1 = ["harry", "soham", "kamal", "shrey"]
-for item in l1:
-    if item.startswith("s"):
-        print(f"Greet{item}")
+# l1 = ["harry", "soham", "kamal", "Shrey"]
+# for item in l1:
+#     if item.startswith("s"):
+#         print(f"Good Evening{item}")
+
+# print(f"Greet{item}")
